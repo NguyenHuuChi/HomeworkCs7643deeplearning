@@ -21,11 +21,13 @@ class TwoLayerNN(nn.Module):
         # TODO: Initialize anything you need for the forward pass
         #############################################################################
         self.channels, self.height, self.width = im_size
-        self.input_dim = self.channels * self.height * self.width
-        self.hidden_dim = hidden_dim
+        self.input_dim = self.channels *self.height* self.width
         self.output_dim = n_classes
-        self.layer1 = nn.Linear(self.input_dim, self.hidden_dim, bias=True)
-        self.layer2 = nn.Linear(self.hidden_dim, self.output_dim, bias=True)
+        self.hidden_dim =hidden_dim
+        self.fc1= nn.Linear(self.input_dim,self.hidden_dim, bias=True)
+        self.fc2= nn.Linear(self.hidden_dim, self.output_dim, bias = True)
+        self.relu = nn.ReLU()
+
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################
@@ -50,12 +52,11 @@ class TwoLayerNN(nn.Module):
         #############################################################################
         # TODO: Implement the forward pass. This should take very few lines of code.
         #############################################################################
-        N, C, H, W = images.shape
-        images_new = torch.reshape(images, (N, -1)) # similar to np.reshape()
-        hidden_out = self.layer1(images_new)
-        relu = nn.ReLU()
-        hidden_out = relu(hidden_out) 
-        scores = self.layer2(hidden_out)  # N x numclass
+        N,C,H,W= images.shape
+        images=torch.reshape(images,(N,-1))
+        x=self.fc1(images)
+        x=self.relu(x)
+        scores=self.fc2(x)
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################

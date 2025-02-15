@@ -8,7 +8,7 @@ def load_CIFAR_batch(filename):
     datadict = pickle.load(f, encoding='latin1')
     X = datadict['data']
     Y = datadict['labels']
-    X = X.reshape(10000, 3, 32, 32).transpose(0,2,3,1).astype("float")
+    X = X.reshape(10000, 3, 32, 32).transpose(0,2,3,1).astype("float") #Use data.shape for data loading and processing , use torch.reshape for tensor reshaping
     Y = np.array(Y)
     return X, Y
 

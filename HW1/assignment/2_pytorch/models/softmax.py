@@ -18,10 +18,11 @@ class Softmax(nn.Module):
         #############################################################################
         # TODO: Initialize anything you need for the forward pass
         #############################################################################
-        self.channels, self.height, self.width = im_size
-        self.input_dim = self.channels * self.height * self.width
+        self.channels, self.height, self.width= im_size
+        self.input_dim= self.channels* self.height*self.width
         self.output_dim = n_classes
-        self.linear = nn.Linear(self.input_dim, self.output_dim, bias=True)
+        self.fc1= nn.Linear(self.input_dim,self.output_dim,bias=True)
+      
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################
@@ -47,9 +48,11 @@ class Softmax(nn.Module):
         # TODO: Implement the forward pass. This should take very few lines of code.
         #############################################################################
         #print(images.shape)
-        N, C, H, W = images.shape
-        images_new = torch.reshape(images, (N, -1)) # similar to np.reshape()
-        scores = self.linear(images_new) # N x numclass
+        N,C,H,W = images.shape
+
+        image= torch.reshape(images,(N,-1))
+        scores= self.fc1(image)
+        
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################

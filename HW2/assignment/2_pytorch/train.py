@@ -102,7 +102,7 @@ if args.cuda:
 # TODO: Initialize an optimizer from the torch.optim package using the
 # appropriate hyperparameters found in args. This only requires one line.
 #############################################################################
-optimizer = optim.SGD(model.parameters(), lr = args.lr, momentum = args.momentum, weight_decay = args.weight_decay)
+pass
 #############################################################################
 #                             END OF YOUR CODE                              #
 #############################################################################
@@ -125,13 +125,7 @@ def train(epoch):
         # TODO: Update the parameters in model using the optimizer from above.
         # This only requires a couple lines of code.
         #############################################################################
-        optimizer.zero_grad()
-
-        pred = model.forward(images)
-        loss = criterion(pred, targets)
-
-        loss.backward()
-        optimizer.step()
+        pass
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################

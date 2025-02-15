@@ -44,9 +44,9 @@ def softmax_loss_vectorized(W, X, y, reg):
   loss = -(1/N) * np.sum(np.log(softmax[y, range(N)] + 1e-5))  + regu
   #print(loss)
 
-  softmax[y, range(N)] -= 1.0
+  softmax[y, range(N)] -= 1.0 
   dW = (1/N) * np.dot(softmax, X.T)# C x N, N x D = C x D
-  dW += reg*W
+  dW += reg*W # reg*w is the derivative of regularize term for w
   #############################################################################
   #                          END OF YOUR CODE                                 #
   #############################################################################

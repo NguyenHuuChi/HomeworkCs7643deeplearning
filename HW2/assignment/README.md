@@ -77,7 +77,7 @@ The following files should be included:
 
 Note that the PDF being uploaded to the `HW2` section must also contain the Jupyter notebooks and generated images. Mark them according to the right sub-questions on Gradescope. You could append the PDFs generated from the Jupyter notebooks and the generated images `convnet_filt.png` and `convnet_gridfilt.png` to the one containing your theory solutions and upload the resulting PDF on Gradescope.
 
-### Q9.4 Experiment (5 pts required + 5 pts extra credit for 4803 and 7643)
+### Q9.4 Experiment (Extra credit for 4803, regular credits for 7643: 10 points)
 
 Experiment and try to get the best performance that you can on CIFAR-10 using a ConvNet.
 Submit your entry on a challenge hosted on [EvalAI](https://evalai.cloudcv.org/web/challenges/challenge-page/684/overview). The website will show a live leader board, so you can see how your implementation is doing compared to others. In order to prevent you from overfitting to the test data, the website limits the number of submissions to 3 per day, and only shows the leaderboard computed on 10% of the test data (so final standings may change). You will receive 5 pts regular credit for submitting something that beats chance, 5 points extra credit for beating the instructor/TA’s implementation.

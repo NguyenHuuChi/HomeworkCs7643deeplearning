@@ -19,14 +19,7 @@ class CNN(nn.Module):
         #############################################################################
         # TODO: Initialize anything you need for the forward pass
         #############################################################################
-        self.channels, self.height, self.width = im_size
-        self.kernel_size = kernel_size
-        self.hidden_dim = hidden_dim
-        self.conv1 = nn.Conv2d(in_channels = self.channels, out_channels = self.hidden_dim, kernel_size = self.kernel_size) 
-        self.relu1 = nn.ReLU()
-        self.maxpool1 = nn.MaxPool2d(kernel_size = self.kernel_size, stride = 1) ###
-        self.conv_out_size = int(self.hidden_dim * (self.height - 2*kernel_size+2) * (self.width - 2*kernel_size+2))
-        self.layer1 = nn.Linear(self.conv_out_size, n_classes)
+        pass
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################
@@ -51,12 +44,7 @@ class CNN(nn.Module):
         #############################################################################
         # TODO: Implement the forward pass. This should take few lines of code.
         #############################################################################
-        #N, C, W, H = images.shape
-        conv_out = self.conv1(images)
-        conv_out = self.relu1(conv_out)
-        conv_out = self.maxpool1(conv_out)
-        fc_1 = conv_out.view(-1, self.conv_out_size)
-        scores = self.layer1(fc_1)
+        pass
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################

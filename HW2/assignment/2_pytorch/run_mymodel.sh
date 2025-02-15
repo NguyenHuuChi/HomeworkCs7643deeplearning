@@ -7,12 +7,12 @@
 python -u train.py \
     --model mymodel \
     --kernel-size 1 \
-    --hidden-dim 15 \
-    --epochs 10 \
-    --weight-decay 0.001 \
-    --momentum 0.9 \
-    --batch-size 64 \
-    --lr 0.00005 | tee mymodel.log
+    --hidden-dim 10 \
+    --epochs 1 \
+    --weight-decay 0.0 \
+    --momentum 0.0 \
+    --batch-size 512 \
+    --lr 0.01 | tee mymodel.log
 #############################################################################
 #                             END OF YOUR CODE                              #
 #############################################################################
